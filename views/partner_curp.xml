@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <!--- TODO [IMP] -->
+        <record model="ir.ui.view" id="view_partner_form_curp">
+            <field name="name">res.partner.form.curp</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="last_reconciliation_date" position="after">
+                    <field name="curp"/>
+                </field>
+            </field>
+        </record>
     </data>
 </openerp>
