@@ -9,5 +9,6 @@ class PartnerCURP(models.Model):
     @api.one
     @api.constrains('curp')
     def _check_curp(self):
-        if len(self.curp) != 18:
-            raise exceptions.ValidationError(_('Invalid CURP'))
+        if self.curp:
+            if len(self.curp) != 18:
+                raise exceptions.ValidationError(_('Invalid CURP'))
